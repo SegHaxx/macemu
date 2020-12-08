@@ -1511,7 +1511,7 @@ elif [[ "x$HAVE_GCC27" = "xyes" -a "x$HAVE_SPARC" = "xyes" -a "x$HAVE_GAS" = "xy
 fi
 
 dnl Enable JIT compiler, if possible.
-if [[ "x$WANT_JIT" = "xyes" -a "x$CAN_JIT" ]]; then
+if test x"$WANT_JIT" = x"yes" && test x"$CAN_JIT" = x"yes"; then
   JITSRCS="$JITSRCS ../uae_cpu/compiler/compemu_support.cpp ../uae_cpu/compiler/compemu_fpp.cpp compstbl.o cpustbl_nf.o"
   DEFINES="$DEFINES -DUSE_JIT -DUSE_JIT_FPU"
   
